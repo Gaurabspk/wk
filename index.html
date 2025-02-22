@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurab Sapkota - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #f4f4f4;
+        }
+
+        /* Home Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            text-align: center;
+        }
+
+        #home h1 {
+            font-size: 4rem;
+            margin: 0;
+            padding: 20px;
+            color: #2a5298;
+            border: 5px solid #2a5298;
+            border-radius: 10px;
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        /* About Me Section */
+        #about img {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 5px solid #2a5298;
+        }
+
+        #about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #about p {
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .small-box {
+            display: inline-block;
+            background-color: #2a5298;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .skill:hover {
+            background-color: #2a5298;
+            color: white;
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: #4CAF50;
+        }
+
+        /* Projects Section */
+        .project-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project {
+            width: 300px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            background-color: #e0f7fa;
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 15px;
+        }
+
+        .project h3 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .project p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        #contact h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        #contact form {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        #contact form input,
+        #contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact form button {
+            background-color: #2a5298;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        #contact form button:hover {
+            background-color: #1e3c72;
+        }
+
+        /* Social Links */
+        #contact .social-links {
+            margin-top: 20px;
+        }
+
+        #contact .social-links a {
+            margin: 0 15px;
+            font-size: 3rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        #contact .social-links a:hover {
+            color: #2a5298;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            #home h1 {
+                font-size: 3rem;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill {
+                width: 80%;
+            }
+
+            .project-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project {
+                width: 90%;
+            }
+
+            .project img {
+                height: 180px;
+            }
+
+            #contact form {
+                width: 90%;
+            }
+
+            #contact .social-links a {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div>
+            <h1>Gaurab Sapkota</h1>
+            <p>IT | Finance Enthusiast | Aspiring Entrepreneur</p>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <img src="../images/gaurabspk.jpg" alt="Gaurab Sapkota">
+        <p>I am Gaurab Sapkota, currently studying in class 12 with a focus on Computer Science. I have a keen interest in Information Technology and Finance, and my ultimate goal is to become an entrepreneur.</p>
+        <div class="small-box">IT & Finance Enthusiast</div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <div class="skill-icon">🎨</div>
+                <p>Graphics Designer</p>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">🎬</div>
+                <p>Video Editing</p>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">🗣️</div>
+                <p>Communication</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <img src="../images/project5.jpg" alt="Project 1">
+                <div class="project-content">
+                    <h3>Instagram Page Growth:</h3>
+                    <p>"Grew an Instagram page from 0 to 10k+ followers in 6 months through strategic content planning, hashtag optimization, and audience engagement."</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="../images/project4.jpg" alt="Project 2">
+                <div class="project-content">
+                    <h3>Tour Counseling:</h3>
+                    <p>"Provided personalized travel planning and counseling services, helping clients discover unique destinations and creating memorable travel experiences."</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="../images/project5.jpg" alt="Project 3">
+                <div class="project-content">
+                    <h3>YouTube Thumbnail Design:</h3>
+                    <p>"Designed eye-catching and engaging thumbnails for YouTube videos, increasing click-through rates by 30% and enhancing channel visibility."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form action="https://formspree.io/f/xaybzylo" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="https://www.facebook.com/gaurab.sapkota.142" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/travelinnepal2025/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>
